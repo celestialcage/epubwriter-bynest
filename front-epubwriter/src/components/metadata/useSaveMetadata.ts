@@ -14,7 +14,7 @@ export function useSaveMetadata(folderId: Id) {
         await updateMetadataApi({ folderId, ...meta });
     },
     // 제목만 성공하고 메타데이터가 실패해도 화면은 실제 상태로 맞춰지게 onSettled
-    onSettled: (_data, _error, { title }) => {
+    onSettled: (_data, _error /*, { title }*/) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.folders }); // 이 폴더 + 상속받는 하위 책들
       // if (title !== undefined) // 조건 변화로 안 씀(최근 변경된 문서)
       queryClient.invalidateQueries({ queryKey: queryKeys.library }); // 1단 사이드바 제목

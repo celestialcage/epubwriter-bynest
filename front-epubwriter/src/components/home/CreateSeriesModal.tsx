@@ -1,5 +1,5 @@
 import { FolderPlus, Loader2, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type SyntheticEvent } from "react";
 
 interface Props {
   isOpen: boolean;
@@ -30,7 +30,7 @@ export default function CreateSeriesModal({
 
   // ESC 키 누르면 모달 닫기
   useEffect(() => {
-    const handleKeyDown = (e) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {
         onClose();
       }
@@ -41,7 +41,7 @@ export default function CreateSeriesModal({
 
   if (!isOpen) return null;
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!title.trim()) return;
 
