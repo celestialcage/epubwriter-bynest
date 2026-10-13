@@ -144,5 +144,4 @@ export class FolderController {
   async deleteChapter(@Param('id', ParseIntPipe) id: number): Promise<void> {
     await this.trashService.moveChapterToTrash(id, userId);
   }
-  ㄴ;
 }
