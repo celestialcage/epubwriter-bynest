@@ -36,6 +36,6 @@ const isProduction = process.env.NODE_ENV === 'production';
     TrashModule,
   ],
   controllers: [AppController],
-  providers: [AppService, FolderService, DocuCleanupService],
+  providers: [AppService],
 })
 export class AppModule {}
