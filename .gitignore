@@ -1,0 +1,21 @@
+# 루트 .gitignore (공통 & SQLite 전용)
+
+# SQLite Database Files
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+*.db-shm
+*.db-wal
+**/db/*.sqlite*
+**/db/*.db*
+
+# OS / Editor Files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Environment Variables
+.env
+.env.*.local
