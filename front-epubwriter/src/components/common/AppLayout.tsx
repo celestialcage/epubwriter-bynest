@@ -13,8 +13,10 @@ import {
 import SidebarParentList from "../sidebar/SidebarParentList";
 import SidebarChildList from "../sidebar/SidebarChildList";
 import SidebarMetadata from "../bookPanel/SidebarMetadata";
+import { useUnsavedChangesGuard } from "../../hooks/useUnsavedChangesGuard";
 
 export const AppLayout = () => {
+  useUnsavedChangesGuard();
   const navigate = useNavigate();
   // 1단 & 2단 사이드바 열림/접힘 상태 (기본값: 모두 펼침)
   const [isParentOpen, setIsParentOpen] = useState(true);
